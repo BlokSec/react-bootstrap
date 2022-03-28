@@ -1,12 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { AuthProvider } from "react-oidc-context";
+import { bloksecConfig } from "./config"
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
+    <AuthProvider {...bloksecConfig}>
     <App />
+    </AuthProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
